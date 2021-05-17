@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Program
+namespace AddressBook
 {
   public class Startup
   {
@@ -38,5 +38,9 @@ namespace Program
         await context.Response.WriteAsync("Hello World!");
       });
     }
+  }
+  public static class DBConfiguration
+  {
+    public static string ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=address_book;";
   }
 }
