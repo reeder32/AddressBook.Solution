@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+@using AddressBook.Models;
+
+<h1>Contacts</h1>
+@if (@Model.Count == 0)
+{
+  <h2>You don't have any contacts...Add below</h2>
+}
+else
+{
+  @foreach (Contact contact in @Model)
+  {
+    <p><a href='/contacts/@contact.Id'>@contact.FirstName @contact.LastName</a></p>
+  }
+}
+
+<a href="/contacts/new">Add Contact</a>
